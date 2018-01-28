@@ -16,5 +16,4 @@ def login(request):
             log(request)
             return redirect(reverse('main:home'))
 
-
     return render(request, 'main/forms/login_form.html')

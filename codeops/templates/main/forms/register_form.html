@@ -1,31 +1,39 @@
 <form action="" method="post">
+    {% csrf_token %}
+    <fieldset class="uk-fieldset">
 
-    <fieldset>
+            <legend class="uk-legend">Inscrivez-vous</legend>
 
-            <legend>Inscrivez-vous</legend>
-
-            <div>
-                <label for="">Nom d'utilisateur</label>
-                {{ form.username }}
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    {{ form.username }}
+                </div>
             </div>
 
-            <div>
-                <label for="">Mot de passe</label>
-                {{ form.password }}
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    {{ form.password }}
+                </div>
             </div>
 
-            <div>
-                <label for="">Repetez votre mot de passe</label>
-                {{ form.repeat }}
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    {{ form.repeat }}
+                </div>
             </div>
 
-            <div>
-                <label for="">Adresse email</label>
-                {{ form.email }}
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                    {{ form.email }}
+                </div>
             </div>
 
-            <div>
-                <input type="submit" value="S'enregistrer">
+            <div class="uk-margin">
+                <input type="submit" value="S'enregistrer" class="uk-button uk-button-secondary uk-form-width-large">
             </div>
 
     </fieldset>

@@ -3,22 +3,22 @@ from django import forms
 
 class RegisterForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput({
-        'class': 'uk-input',
+        'class': 'uk-input uk-form-width-large',
         'placeholder': 'Entrez votre nom d\'utilisateur'
     }))
 
     password = forms.CharField(widget=forms.PasswordInput({
-        'class': 'uk-input',
+        'class': 'uk-input uk-form-width-large',
         'placeholder': 'Entez votre mot de passe'
     }))
 
     repeat = forms.CharField(widget=forms.PasswordInput({
-        'class': 'uk-input',
+        'class': 'uk-input uk-form-width-large',
         'placeholder': 'Repetez votre mot de passe'
     }))
 
     email = forms.CharField(widget=forms.EmailInput({
-        'class': 'uk-input',
+        'class': 'uk-input uk-form-width-large',
         'placeholder': 'Entrez votre adresse email'
     }))
 

@@ -1,13 +1,20 @@
 {% extends 'layout.html' %}
 
-{% block title %} Inscription {% enblock %}
+{% block title %} Inscription {% endblock %}
 
 {% block main %}
 
-    <section>
-
-        {% include 'register_form.html' %}
-
+    <section class="my-form uk-card uk-card-body uk-card-default uk-card-hover ">
+        <div class="uk-grid-large uk-grid-match uk-flex-center" uk-grid>
+            <div>
+                {% include 'main/forms/register_form.html' %}
+            </div>
+            <div>
+                <p>
+                    Rejoignez d'autres fan de programmation en vous inscrivant.
+                </p>
+            </div>
+        </div>
     </section>
 
 {% endblock %}

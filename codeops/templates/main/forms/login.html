@@ -1,11 +1,16 @@
 {% extends 'layout.html' %}
 
+{% block meta %} {% endblock %}
+
 {% block title %} Connexion {% endblock %}
 
 {% block main %}
 
-<section>
-    {% include 'login_form.html' %}
+<section class="my-form uk-card uk-card-default uk-card-hover">
+    <div class="uk-flex-center" uk-grid>
+        {% include 'main/forms/login_form.html' %}
+    </div>
+
 </section>
 
 {% endblock %}
