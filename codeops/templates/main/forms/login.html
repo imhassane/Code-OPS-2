@@ -1,21 +1,11 @@
-<form action="" method="post">
+{% extends 'layout.html' %}
 
-    <fieldset>
-        <legend>Connectez-vous</legend>
+{% block title %} Connexion {% endblock %}
 
-        <div>
-            <label for="">Nom d'utilisateur</label>
+{% block main %}
 
-        </div>
+<section>
+    {% include 'login_form.html' %}
+</section>
 
-        <div>
-            <label for="">Mot de passe</label>
-        </div>
-
-        <div>
-            <input type="submit" value="Se connecter">
-        </div>
-
-    </fieldset>
-
-</form>
+{% endblock %}

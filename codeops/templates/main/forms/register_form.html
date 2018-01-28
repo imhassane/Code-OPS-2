@@ -1,0 +1,33 @@
+<form action="" method="post">
+
+    <fieldset>
+
+            <legend>Inscrivez-vous</legend>
+
+            <div>
+                <label for="">Nom d'utilisateur</label>
+                {{ form.username }}
+            </div>
+
+            <div>
+                <label for="">Mot de passe</label>
+                {{ form.password }}
+            </div>
+
+            <div>
+                <label for="">Repetez votre mot de passe</label>
+                {{ form.repeat }}
+            </div>
+
+            <div>
+                <label for="">Adresse email</label>
+                {{ form.email }}
+            </div>
+
+            <div>
+                <input type="submit" value="S'enregistrer">
+            </div>
+
+    </fieldset>
+
+</form>
