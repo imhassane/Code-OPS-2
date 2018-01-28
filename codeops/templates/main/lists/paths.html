@@ -2,8 +2,34 @@
 
 {% block meta %} {% endblock %}
 
-{% block title %} Choose a path {% endblock %}
+{% block title %} Choisissez un parcours {% endblock %}
 
 {% block main %}
+
+<section class="uk-grid-medium uk-child-width-1-1@s uk-child-width-1-3@m uk-grid-match uk-flex-center" uk-grid>
+    {% for p in paths %}
+
+        <div>
+            <div class="uk-card uk-card-default uk-card-hover">
+
+                <div class="uk-card-header">
+                    <h2 class="uk-card-title"> {{ p.title }} </h2>
+                </div>
+
+                <div class="uk-card-body">
+                    <p>
+                        {{ p.description }}
+                    </p>
+                </div>
+
+                <div class="uk-card-footer">
+                    <a href="" class="uk-button uk-button-secondary">Commencer ce parcours!</a>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+</section>
 
 {% endblock %}

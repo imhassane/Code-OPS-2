@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html>
     <head>
@@ -5,24 +6,32 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css" />
+
+        <link rel="stylesheet" href="{% static 'dist/css/custom.css' %}">
         <!-- Other meta that can be added for da different page -->
         {% block meta %}{% endblock %}
         <title>{% block title %} Welcome to CodeOPS {% endblock %} - CodeOPS!</title>
     </head>
-    <body>
+    <body class="uk-background-primary">
 
-        <div>
+        <div class="uk-container uk-container-expand">
             <header>
-
+                {% include 'header.html' %}
             </header>
-            <section>
+            <section id="content">
+                <canvas id="canvas"></canvas>
                 <main>{% block main %} {% endblock %}</main>
-                <section>{% block secondary %} {% endblock %}</section>
             </section>
             <footer>
 
             </footer>
         </div>
 
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
     </body>
 </html>
