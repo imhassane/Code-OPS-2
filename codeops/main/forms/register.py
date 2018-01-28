@@ -24,7 +24,7 @@ class RegisterForm(forms.Form):
 
     def clean(self):
 
-        cleaned_data = super(RegisterForm, self).cleaned_data
+        cleaned_data = super().clean()
 
         password = cleaned_data['password']
         rptpassw = cleaned_data['repeat']

@@ -1,11 +1,11 @@
 from django.db import models
 from .Path import Path
-from .Profil import Profil
+from django.contrib.auth.models import User
 
 
 class UserPath(models.Model):
 
-    user = models.OneToOneField(Profil, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     path = models.OneToOneField(Path, on_delete=models.CASCADE)
 
     def __str__(self):

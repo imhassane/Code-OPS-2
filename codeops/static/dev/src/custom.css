@@ -18,6 +18,11 @@ body{
     width: 100%;
 }
 
+.header-title div ul li a{
+    color: white;
+    text-decoration: none;
+}
+
 .home{
     display: flex;
     flex-direction: column;
@@ -28,4 +33,15 @@ body{
 
 .welcome{
     color: white;
+}
+
+.my-form{
+    position: absolute;
+    top: 10%;
+    height: 80%;
+    width: 90%;
+}
+
+.uk-input{
+    border: 1px solid gray;
 }

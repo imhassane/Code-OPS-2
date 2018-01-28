@@ -13,7 +13,7 @@ def login(request):
         user = authenticate(request, username=username, password=password)
 
         if user:
-            log(request)
+            log(request, user)
             return redirect(reverse('main:home'))
 
-    return render(request, 'main/forms/login_form.html')
+    return render(request, 'main/forms/login.html', {'form': form})

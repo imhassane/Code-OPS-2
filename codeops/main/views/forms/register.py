@@ -6,6 +6,9 @@ from ...forms import RegisterForm
 
 def register(request):
 
+    if request.user.is_authenticated:
+        return redirect(reverse('main:home'))
+
     form = RegisterForm(request.POST or None)
 
     if form.is_valid():
@@ -16,8 +19,9 @@ def register(request):
 
         user = User.objects.create_user(username=username, email=email, password=password)
 
-        profile = Profil(user=user)
-
-        if profile:
+        if user:
+            profile = Profil(user=user)
+            profile.save()
             return redirect(reverse('main:home'))
-    return render(request, 'main/register.html')
+
+    return render(request, 'main/forms/register.html', {'form': form})

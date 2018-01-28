@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.text import Truncator
-from .models import Career, Path, Course, Part
+from .models import Career, Path, Course, Part, UserCareer, UserPath
 
 
 @admin.register(Career)
@@ -76,3 +76,5 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Part)
+admin.site.register(UserCareer)
+admin.site.register(UserPath)

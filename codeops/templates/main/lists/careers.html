@@ -24,7 +24,11 @@
             </div>
 
             <div class="uk-card-footer">
-                <a href="{% url 'main:paths' %}" class="uk-button uk-button-secondary">Commencer cette carrière</a>
+                {% if not user.usercareer.career == c %}
+                <a href="{% url 'main:new_career' user.username c.pk %}" class="uk-button uk-button-secondary">Commencer cette carrière</a>
+                {% else %}
+                <a href="{% url 'main:paths' %}" class="uk-button uk-button-secondary">Continuer cette carrière</a>
+                {% endif %}
             </div>
 
         </div>

@@ -13,8 +13,13 @@
         </div>
         <div>
             <ul>
-                <li><a href="">Connexion</a></li>
-                <li><a href="">Inscription</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="">{{ user.username }}</a></li>
+                <li><a href="">Mes cours</a></li>
+                {% else %}
+                <li><a href="{% url 'main:login' %}">Connexion</a></li>
+                <li><a href="{% url 'main:register' %}">Inscription</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

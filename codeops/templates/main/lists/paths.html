@@ -23,7 +23,11 @@
                 </div>
 
                 <div class="uk-card-footer">
-                    <a href="" class="uk-button uk-button-secondary">Commencer ce parcours!</a>
+                    {% if user.userpath.path == p %}
+                    <a href="" class="uk-button uk-button-secondary">Continuer ce parcours!</a>
+                    {% else %}
+                    <a href="{% url 'main:new_path' user.username p.pk %}" class="uk-button uk-button-secondary">Commencer ce parcours!</a>
+                    {% endif %}
                 </div>
 
             </div>
