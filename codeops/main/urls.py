@@ -8,7 +8,8 @@ app_name = "main"
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('careers/', login_required(CareerList.as_view()), name='careers'),
-    path('paths/', login_required(PathList.as_view()), name='paths'),
+    path('paths/<int:career_pk>', login_required(PathList.as_view()), name='paths'),
+    path('courses/<int:path_pk>', login_required(PathList.as_view()), name='courses'),
 
     path('new_career/<str:username>/<int:career_pk>/', career_redirect, name='new_career'),
     path('new_path/<str:username>/<int:path_pk>/', path_redirect, name='new_path'),
