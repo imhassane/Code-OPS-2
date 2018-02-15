@@ -10,5 +10,5 @@ class PathList(ListView):
     template_name = 'main/lists/paths.html'
 
     def get_queryset(self):
-        paths = Path.objects.filter(career=_g(Career, self.kwargs['career_pk'])).filter(visible=True)
+        paths = Path.objects.filter(career=_g(Career, pk=self.kwargs['career_pk'])).filter(visible=True)
         return paths
