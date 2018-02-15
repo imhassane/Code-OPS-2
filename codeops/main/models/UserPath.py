@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class UserPath(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     path = models.OneToOneField(Path, on_delete=models.CASCADE)
 
     def __str__(self):

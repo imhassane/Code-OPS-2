@@ -13,4 +13,4 @@ def path_redirect(request, username, path_pk):
     user_path = UserPath(user=user, path=path)
     user_path.save()
 
-    return redirect(reverse('main:paths', kwargs={'path_pk': path_pk}))
+    return redirect(reverse('main:courses', kwargs={'path_pk': path_pk}))
