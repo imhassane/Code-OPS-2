@@ -10,4 +10,4 @@ class CourseList(ListView):
     template_name = 'main/lists/courses.html'
 
     def get_queryset(self):
-        return Course.objects.filter(visible=True).filter(path=_g(Path, pk=self.kwargs['path_pk']))
+        return Course.objects.filter(path=_g(Path, pk=self.kwargs['path_pk']))
