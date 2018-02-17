@@ -23,6 +23,11 @@
                 </div>
 
                 <div class="uk-card-footer">
+                    {% if not c in user_courses %}
+                    <a href="{% url 'main:new_course' user.username c.slug %}" class="uk-button uk-button-text">Commencer ce cours</a>
+                    {% else %}
+                    <a href="{% url 'main:parts' c.slug %}" class="uk-button uk-button-text">Continuer ce cours</a>
+                    {% endif %}
                 </div>
 
             </div>

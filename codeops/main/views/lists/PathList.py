@@ -10,7 +10,7 @@ class PathList(ListView):
     template_name = 'main/lists/paths.html'
 
     def get_queryset(self):
-        return Path.objects.filter(career=_g(Career, id=self.kwargs['career_pk'])).filter(visible=True)
+        return Path.objects.filter(career=_g(Career, pk=self.kwargs['career_pk'])).filter(visible=True)
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(PathList, self).get_context_data(object_list=object_list, **kwargs)
