@@ -15,6 +15,7 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li><a href="">{{ user.username }}</a></li>
+                <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
                 <li><a href="">Mes cours</a></li>
                 {% else %}
                 <li><a href="{% url 'main:login' %}">Connexion</a></li>
