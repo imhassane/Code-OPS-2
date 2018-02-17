@@ -12,9 +12,9 @@ urlpatterns = [
     path('courses/<int:path_pk>', CourseList.as_view(), name='courses'),
     path('parts/<slug:course_slug>', PartList.as_view(), name='parts'),
 
-    path('new_career/<str:username>/<int:career_pk>/', career_redirect, name='new_career'),
-    path('new_path/<str:username>/<int:path_pk>/', path_redirect, name='new_path'),
-    path('new_course/<str:username>/<slug:course_slug>', course_redirect, name='new_course'),
+    path('new_career/<str:username>/<int:career_pk>/', login_required(career_redirect), name='new_career'),
+    path('new_path/<str:username>/<int:path_pk>/', login_required(path_redirect), name='new_path'),
+    path('new_course/<str:username>/<slug:course_slug>', login_required(course_redirect), name='new_course'),
 
     path('login/', login, name='login'),
     path('register/', register, name='register'),
