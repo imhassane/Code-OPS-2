@@ -2,7 +2,6 @@ from .Career import Career
 from .Path import Path
 from .Course import Course
 from .Part import Part
-from .Lesson import Lesson
 
 # Partie utilisateur.
 from .Profil import Profil

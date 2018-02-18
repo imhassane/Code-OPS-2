@@ -1,21 +1,44 @@
-<div class="">
+<div class="uk-position-top">
 
-    <div class="header-title">
-        <div>
-            <span>CodeOPS!</span>
-        </div>
-        <div>
-            <ul>
+    {% if home %}
+    <nav class="uk-navbar-container uk-navbar-transparent uk-light" uk-navbar>
+    {% else %}
+    <nav class="uk-navbar-container uk-navbar-transparent uk-dark" uk-navbar>
+    {% endif %}
+
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
                 <li><a href="">A propos</a></li>
                 <li><a href="">Portfolio</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
         </div>
-        <div>
-            <ul>
+
+        <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav">
+                <li><a href="{% url 'main:home' %}">CodeOPS!</a></li>
+            </ul>
+        </div>
+
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
                 {% if user.is_authenticated %}
-                <li><a href="">{{ user.username }}</a></li>
-                <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
+                <li>
+                    <a href="">{{ user.username }}</a>
+                    <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Mon compte</a></li>
+                        <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
+
+                        <li class="uk-nav-header">Cours</li>
+                        <li><a href="#">Tableau de bord</a></li>
+                        <li><a href="#">Voir les cours</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Aller vers le blog</a></li>
+                    </ul>
+                </div>
+                </li>
+
                 <li><a href="">Mes cours</a></li>
                 {% else %}
                 <li><a href="{% url 'main:login' %}">Connexion</a></li>
@@ -23,6 +46,7 @@
                 {% endif %}
             </ul>
         </div>
-    </div>
+
+</nav>
 
 </div>

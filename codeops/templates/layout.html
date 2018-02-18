@@ -15,7 +15,11 @@
         {% block meta %}{% endblock %}
         <title>{% block title %} Welcome to CodeOPS {% endblock %} - CodeOPS!</title>
     </head>
+    {% if home %}
     <body class="uk-background-primary">
+    {% else %}
+    <body class="uk-background-muted">
+    {% endif %}
 
         <div class="uk-container uk-container-expand">
             <header>

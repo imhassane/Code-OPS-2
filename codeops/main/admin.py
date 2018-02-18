@@ -74,7 +74,6 @@ class CourseAdmin(admin.ModelAdmin):
         return Truncator(path.description).chars(40, truncate='...')
     resume_description.short_description = 'Description'
 
-
 admin.site.register(Part)
 admin.site.register(UserCareer)
 admin.site.register(UserPath)

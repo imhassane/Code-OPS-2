@@ -13,5 +13,6 @@ def course_redirect(request, username, course_slug):
     if user and course:
         user_course = UserCourse(user=user, course=course)
         user_course.save()
+        return redirect(reverse('main:parts', kwargs={'course_slug': course_slug}))
 
     return redirect(reverse('main:home'))
