@@ -18,6 +18,8 @@ urlpatterns = [
     path('new_path/<str:username>/<int:path_pk>/', login_required(path_redirect), name='new_path'),
     path('new_course/<str:username>/<slug:course_slug>', login_required(course_redirect), name='new_course'),
 
+    path('dashboard/', dashboard, name='dashboard'),
+
     path('login/', login, name='login'),
     path('register/', register, name='register'),
     path('logout/', logout, name='logout')
