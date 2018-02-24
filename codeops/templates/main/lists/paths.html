@@ -9,29 +9,37 @@
 <section class="uk-grid-medium uk-child-width-1-1@s uk-child-width-1-3@m uk-grid-match uk-flex-center" uk-grid>
     {% for p in paths %}
 
-        <div>
-            <div class="uk-card uk-card-default uk-card-hover">
+    <div>
+        <div class="uk-card uk-card-default uk-card-hover">
 
-                <div class="uk-card-header">
-                    <h2 class="uk-card-title"> {{ p.title }} </h2>
-                </div>
-
-                <div class="uk-card-body">
-                    <p>
-                        {{ p.description }}
-                    </p>
-                </div>
-
-                <div class="uk-card-footer">
-                    {% if p in user_paths %}
-                    <a href="{% url 'main:courses' p.pk %}" class="uk-button uk-button-secondary">Continuer ce parcours!</a>
-                    {% else %}
-                    <a href="{% url 'main:new_path' user.username p.pk %}" class="uk-button uk-button-secondary">Commencer ce parcours!</a>
-                    {% endif %}
-                </div>
-
+            <div class="uk-card-header">
+                <h2 class="uk-card-title"> {{ p.title }} </h2>
             </div>
+
+            <div class="uk-card-body">
+                <p>
+                    {{ p.description }}
+                </p>
+            </div>
+
+            <div class="uk-card-footer">
+                {% if p in user_paths %}
+                <a href="{% url 'main:courses' p.pk %}" class="uk-button uk-button-secondary">Continuer ce parcours!</a>
+                {% else %}
+                <a href="{% url 'main:new_path' p.pk career.pk %}" class="uk-button uk-button-secondary">Commencer ce parcours!</a>
+                {% endif %}
+            </div>
+
         </div>
+    </div>
+    {% empty %}
+
+    <span class="uk-text-center uk-text-bold">
+        <p>
+            <span uk-icon="icon: warning"></span>
+            Aucun parcours n'est disponible pour le moment
+        </p>
+
     {% endfor %}
 
 </section>

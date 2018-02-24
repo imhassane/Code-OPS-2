@@ -15,8 +15,8 @@ urlpatterns = [
     path('part/<slug:part_slug>/<int:pk>/', PartDetail.as_view(), name='part'),
 
     path('new_career/<str:username>/<int:career_pk>/', login_required(career_redirect), name='new_career'),
-    path('new_path/<str:username>/<int:path_pk>/', login_required(path_redirect), name='new_path'),
-    path('new_course/<str:username>/<slug:course_slug>', login_required(course_redirect), name='new_course'),
+    path('new_path/<int:path_pk>/<int:career_pk>/', login_required(path_redirect), name='new_path'),
+    path('new_course/<slug:course_slug>/<int:path_pk>/', login_required(course_redirect), name='new_course'),
 
     path('dashboard/', dashboard, name='dashboard'),
 

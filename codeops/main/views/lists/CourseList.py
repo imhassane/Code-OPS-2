@@ -22,5 +22,6 @@ class CourseList(ListView):
         for c in courses:
             user_courses.append(c.course)
         context['user_courses'] = user_courses
+        context['path'] = _g(Path, pk=self.kwargs['path_pk'])
 
         return context

@@ -22,5 +22,6 @@ class PathList(ListView):
         for c in paths:
             user_path.append(c.path)
         context['user_paths'] = user_path
+        context['career'] = _g(Career, pk=self.kwargs['career_pk'])
 
         return context
