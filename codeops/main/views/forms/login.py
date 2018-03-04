@@ -14,6 +14,10 @@ def login(request):
 
         if user:
             log(request, user)
+
+            if request.GET['next']:
+                return redirect(request.GET.get('next'))
+
             return redirect(reverse('main:home'))
 
     return render(request, 'main/forms/login.html', {'form': form})

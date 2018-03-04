@@ -13,12 +13,13 @@ class CareerList(ListView):
 
         context = super(CareerList, self).get_context_data(object_list=object_list, **kwargs)
 
-        # On récupère la liste des carrières suivies par l'utilisateur.
-        user_careers = list()
-        careers = UserCareer.objects.filter(user=self.request.user)
-
-        for c in careers:
-            user_careers.append(c.career)
-        context['user_careers'] = user_careers
+        # On récupère la liste des carrières suivies par l'utilisateur si il est connecté.
+        if self.request.user.is_authenticated:
+            user_careers = list()
+            careers = UserCareer.objects.filter(user=self.request.user)
+    
+            for c in careers:
+                user_careers.append(c.career)
+            context['user_careers'] = user_careers
 
         return context
