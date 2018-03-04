@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css" />
 
         <link rel="stylesheet" href="{% static 'dist/css/custom.css' %}">
+        <link rel="icon" type="image/icon" href="{{ MEDIA_URL}}codeops.png">
         <!-- Other meta that can be added for da different page -->
         {% block meta %}{% endblock %}
         <title>{% block title %} Welcome to CodeOPS {% endblock %} - CodeOPS!</title>
@@ -20,6 +21,7 @@
     {% else %}
     <body class="uk-background-muted">
     {% endif %}
+
 
         <div class="uk-container uk-container-expand">
             <header>
