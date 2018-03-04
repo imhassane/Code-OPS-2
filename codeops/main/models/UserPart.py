@@ -8,6 +8,7 @@ class UserPart(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     part = models.ForeignKey(Part, on_delete=models.CASCADE)
+    validate = models.BooleanField(default=False)
 
     user_course = models.ForeignKey(UserCourse, on_delete=models.CASCADE, default=None)
 
