@@ -15,30 +15,36 @@
         <!-- Other meta that can be added for da different page -->
         {% block meta %}{% endblock %}
         <title>{% block title %} Welcome to CodeOPS {% endblock %} - CodeOPS!</title>
+
+        <style>
+            .turbolinks-progress-bar{
+            height:5px;
+            }
+        </style>
+
+        <script src="{% static 'dist/js/turbolinks.js' %}"></script>
+
     </head>
-    {% if home %}
-    <body class="uk-background-primary">
-    {% else %}
-    <body class="uk-background-muted">
-    {% endif %}
+    <body class="">
 
+        <header>
+            {% include 'header.html' %}
+        </header>
+        <div class="uk-container uk-container-expand" id="main-content">
 
-        <div class="uk-container uk-container-expand">
-            <header>
-                {% include 'header.html' %}
-            </header>
             <section id="content">
                 <canvas id="canvas"></canvas>
                 <main>{% block main %} {% endblock %}</main>
             </section>
-            <footer>
-
-            </footer>
         </div>
+        <footer>
+            {% include 'footer.html' %}
+        </footer>
 
         <!-- UIkit JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+        <script></script>
         {% block additionnal_scripts %}{% endblock %}
     </body>
 </html>

@@ -24,9 +24,9 @@
 
             <div class="uk-card-footer">
                 {% if not c in user_courses %}
-                <a href="{% url 'main:new_course' c.slug path.pk %}" class="uk-width-1-1 uk-button uk-button-text">Commencer ce cours</a>
+                <a href="{% url 'main:new_course' c.slug path.pk %}" class="uk-width-1-1 uk-button uk-button-secondary">Commencer ce cours</a>
                 {% else %}
-                <a href="{% url 'main:parts' c.slug %}" class="uk-width-1-1 uk-button uk-button-text">Continuer ce cours</a>
+                <a href="{% url 'main:parts' c.slug %}" class="uk-width-1-1 uk-button uk-button-secondary">Continuer ce cours</a>
                 {% endif %}
             </div>
 

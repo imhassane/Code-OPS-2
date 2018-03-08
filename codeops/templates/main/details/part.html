@@ -3,13 +3,14 @@
 {% block title %} {{ part.title }} {% endblock %}
 
 {% block main %}
-<h1 class="uk-heading-line"><span>{{ part.title }}</span></h1>
+<h4 class="uk-heading-line"><span>{{ part.title }}</span></h4>
 
 <div class="uk-child-width-1-2@m uk-child-width-1-1@s u-grid-small" uk-grid>
 
     <div>
         <iframe width="560" height="315" src="{{ part.url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
+
     <div class="uk-child-width-1-1" uk-grid>
         <div>
             <div>
@@ -31,6 +32,11 @@
         </div>
     </div>
 
+</div>
+
+<div>
+    <h3 class="uk-heading-line"><span>Article textuel</span></h3>
+    {{ part.content|safe}}
 </div>
 {% endblock %}
 

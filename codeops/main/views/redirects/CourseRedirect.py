@@ -13,5 +13,7 @@ def course_redirect(request, course_slug, path_pk):
 
     if user and course:
         user_course = UserCourse(user=user, course=course, user_path=user_path)
-        user_course.save()
+        if not UserCourse.objects.contains(user_course):
+            user_course.save()
+
         return redirect(reverse('main:parts', kwargs={'course_slug': course_slug}))
