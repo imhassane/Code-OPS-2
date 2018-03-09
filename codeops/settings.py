@@ -119,3 +119,9 @@ MEDIA_URL = '/medias/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
 
 LOGIN_URL = '/login/'
+
+# Configuration des bases de données.
+if os.environ['DEV_MODE'] == 'PRODUCTION':
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()
+    SECRET_KEY = os.environ['SECRET_KEY']
