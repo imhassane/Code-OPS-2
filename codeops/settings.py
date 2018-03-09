@@ -134,3 +134,6 @@ if not os.environ['DEV_MODE'] == 'PRODUCTION':
     MIDDLEWARE += [
         'whitenoise.middleware.WhiteNoiseMiddleware',
     ]
+
+    # Mise en cache des fichiers avec white noise
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
