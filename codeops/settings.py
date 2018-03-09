@@ -120,6 +120,9 @@ LOGIN_URL = '/login/'
 # Configuration des bases de données.
 if not os.environ['DEV_MODE'] == 'PRODUCTION':
 
+    # Debug à true
+    DEBUG = True
+
     # Configuration de postgresql.
     import dj_database_url
     DATABASES['default'] = dj_database_url.config()
