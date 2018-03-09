@@ -1,0 +1,37 @@
+<a class="uk-accordion-title" href="#">Carrières</a>
+
+<div class="uk-accordion-content">
+
+    <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+        {% for c in careers %}
+        <div>
+            <div class="uk-card uk-card-default uk-card-hover">
+                <div class="uk-card-header">
+                    <div class="uk-width-1-1">
+                        <h4>{{ c.career.title }}</h4>
+                    </div>
+                    <div class="uk-width-1-1">
+                        <p class="uk-text-bold">
+                            <span uk-icon="icon: calendar"></span>
+                            {{ c.career.added_date }}
+                        </p>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    <span class="uk-text-bold">{{ c.career.description }}</span>
+                </div>
+                <div class="uk-card-footer">
+                    <a class="uk-button uk-button-secondary" href="{% url 'main:careers' %}">Voir cette carrière</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>
+            <span uk-icon="icon: warning"></span>
+            Vous ne suivez aucune carrière pour le moment
+        </p>
+        {% endfor %}
+
+    </div>
+
+</div>

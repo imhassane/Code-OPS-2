@@ -1,0 +1,28 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <fieldset class="uk-fieldset">
+        <legend class="uk-legend">Connectez-vous</legend>
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                {{ form.username }}
+            </div>
+        </div>
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                {{ form.password }}
+            </div>
+        </div>
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <input type="submit" value="Se connecter" class="uk-button uk-button-secondary uk-form-width-large">
+            </div>
+        </div>
+
+    </fieldset>
+
+</form>
