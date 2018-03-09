@@ -1,0 +1,37 @@
+{
+  "name": "code_ops",
+  "version": "0.0.1",
+  "description": "Apprenez à coder puis à créer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "prod": "gulp prod"
+  },
+  "repository": "git+https://github.com/imhassane/Code-OPS-2.git",
+  "keywords": [
+    "code",
+    "programmation",
+    "js",
+    "django",
+    "python"
+  ],
+  "author": "Thierno Hassane SOW",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imhassane/Code-OPS-2/issues"
+  },
+  "homepage": "https://github.com/imhassane/Code-OPS-2#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify": "^2.1.0"
+  },
+  "dependencies": {
+    "turbolinks": "^5.1.1"
+  }
+}
