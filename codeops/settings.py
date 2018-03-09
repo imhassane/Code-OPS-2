@@ -121,7 +121,7 @@ LOGIN_URL = '/login/'
 if not os.environ['DEV_MODE'] == 'PRODUCTION':
 
     # Debug à true
-    DEBUG = True
+    DEBUG = False
 
     # Configuration de postgresql.
     import dj_database_url
@@ -134,6 +134,3 @@ if not os.environ['DEV_MODE'] == 'PRODUCTION':
     MIDDLEWARE += [
         'whitenoise.middleware.WhiteNoiseMiddleware',
     ]
-
-    # Mise en cache des fichiers avec white noise
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
