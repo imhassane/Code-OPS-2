@@ -122,6 +122,15 @@ LOGIN_URL = '/login/'
 
 # Configuration des bases de données.
 if os.environ['DEV_MODE'] == 'PRODUCTION':
+
+    # Configuration de postgresql.
     import dj_database_url
     DATABASES['default'] = dj_database_url.config()
+
+    # Changement de la clé secrete.
     SECRET_KEY = os.environ['SECRET_KEY']
+
+    # Ajout du middleware pour servir les fichiers en producton
+    MIDDLEWARE += [
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+    ]
