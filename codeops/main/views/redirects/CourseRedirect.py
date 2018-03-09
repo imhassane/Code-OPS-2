@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from ...models import Course, UserCourse, UserPath, Path
 from django.shortcuts import get_object_or_404 as _g, redirect, reverse
+from django.core.exceptions import ObjectDoesNotExist
 
 
 @login_required
@@ -13,7 +14,10 @@ def course_redirect(request, course_slug, path_pk):
 
     if user and course:
         user_course = UserCourse(user=user, course=course, user_path=user_path)
-        if not UserCourse.objects.contains(user_course):
+
+        try:
+            UserCourse.objects.filter(user=user, course=course, user_path=user_path)
+        except ObjectDoesNotExist:
             user_course.save()
 
         return redirect(reverse('main:parts', kwargs={'course_slug': course_slug}))

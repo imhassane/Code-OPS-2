@@ -5,6 +5,9 @@ from ...forms import LoginForm
 
 def login(request):
 
+    if request.user.is_authenticated:
+        return redirect(reverse('main:dashboard'))
+
     form = LoginForm(request.POST or None)
 
     if form.is_valid():

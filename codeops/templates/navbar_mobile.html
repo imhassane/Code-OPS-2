@@ -1,0 +1,37 @@
+<!-- Menu mobile -->
+<nav class="uk-navbar uk-navbar-container uk-box-shadow-large uk-hidden@m" uk-navbar>
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-toggle" href="#" uk-toggle="target: #menu-mobile">
+            <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+        </a>
+    </div>
+    <div class="uk-navbar-center">
+        <a href="{% url 'main:home' %}" class="uk-navbar-item uk-logo">
+            <img class="uk-border-circle" src="../medias/codeops.png" width="75"/>
+        </a>
+    </div>
+</nav>
+<div class="uk-offcanvas-content">
+    <div id="menu-mobile" uk-offcanvas="mode: push; overlay: true">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <ul class="uk-nav uk-nav-default">
+                <li class="uk-nav-header">CodeOPS</li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> A propos</a></li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Portfolio</a></li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Contact</a></li>
+                <li class="uk-nav-divider"></li>
+
+                {% if not user.is_authenticated %}
+                <li class="uk-nav-header">Authentification</li>
+                <li><a href="{% url 'main:login' %}"><span class="uk-margin-small-right" uk-icon="icon: user"></span> Connexion</a></li>
+                <li><a href="{% url 'main:register' %}"><span class="uk-margin-small-right" uk-icon="icon: users"></span> Inscription</a></li>
+                {% else %}
+                <li class="uk-nav-header">{{ user.username }}</li>
+                <li><a href="{% url 'main:dashboard' %}">Tableau de bord</a></li>
+                <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
