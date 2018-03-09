@@ -10,10 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'p2oe2rva#kahm&u=67o&il88(so46#t%%q+*76fv3)msw^^t8i'
 
-if os.environ.get('DEV_MODE') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'code-ops.herokuapp.com']
 
@@ -121,7 +118,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
 LOGIN_URL = '/login/'
 
 # Configuration des bases de données.
-if os.environ['DEV_MODE'] == 'PRODUCTION':
+if not os.environ['DEV_MODE'] == 'PRODUCTION':
 
     # Configuration de postgresql.
     import dj_database_url
