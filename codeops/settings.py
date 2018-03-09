@@ -10,8 +10,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'p2oe2rva#kahm&u=67o&il88(so46#t%%q+*76fv3)msw^^t8i'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get('DEV_MODE') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'code-ops.herokuapp.com']
 
