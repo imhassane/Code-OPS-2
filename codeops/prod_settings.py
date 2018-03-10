@@ -4,8 +4,8 @@ from .settings import *
 ALLOWED_HOSTS = ['code-ops.herokuapp.com']
 
 # Debug à true
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 # Configuration de postgresql.
 import dj_database_url
