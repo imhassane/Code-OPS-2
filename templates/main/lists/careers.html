@@ -28,7 +28,6 @@
                 <a href="{% url 'main:new_career' user.username c.pk %}" class="uk-width-1-1 uk-button uk-button-secondary">Commencer cette carrière</a>
                 {% else %}
                     {% if user.is_authenticated %}
-                <img src="{{ MEDIA_URL }}" alt="">
                     <a href="{% url 'main:paths' c.pk %}" class="uk-width-1-1 uk-button uk-button-secondary">Continuer cette carrière</a>
                     {% else %}
                         <a href="{% url 'main:paths' c.pk%}" class="uk-width-1-1 uk-button uk-button-secondary">Voir cette carrière</a>
