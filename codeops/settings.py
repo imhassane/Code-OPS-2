@@ -12,7 +12,7 @@ SECRET_KEY = 'p2oe2rva#kahm&u=67o&il88(so46#t%%q+*76fv3)msw^^t8i'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'code-ops.herokuapp.com']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -116,24 +116,3 @@ MEDIA_URL = '/medias/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
 
 LOGIN_URL = '/login/'
-
-# Configuration des bases de données.
-if not os.environ['DEV_MODE'] == 'PRODUCTION':
-
-    # Debug à true
-    DEBUG = False
-
-    # Configuration de postgresql.
-    import dj_database_url
-    DATABASES['default'] = dj_database_url.config()
-
-    # Changement de la clé secrete.
-    SECRET_KEY = os.environ['SECRET_KEY']
-
-    # Ajout du middleware pour servir les fichiers en producton
-    MIDDLEWARE += [
-        'whitenoise.middleware.WhiteNoiseMiddleware',
-    ]
-
-    # Mise en cache des fichiers avec white noise
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
