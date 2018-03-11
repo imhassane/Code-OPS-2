@@ -24,7 +24,7 @@ class SuperModel(models.Model):
 class BaseCourseModel(SuperModel):
     """ This class will be the super class of the models Career, Path, Course, Part. """
 
-    description = models.TextField(default="No description available")
+    description = models.TextField(default="Aucune description disponible")
 
     class Meta:
         abstract = True

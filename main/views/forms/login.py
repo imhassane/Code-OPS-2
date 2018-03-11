@@ -10,6 +10,11 @@ def login(request):
 
     form = LoginForm(request.POST or None)
 
+    context = {}
+
+    # Ajout du formulaire de connexion dans le contexte.
+    context['form'] = form
+
     if form.is_valid():
         username, password = form.cleaned_data['username'], form.cleaned_data['password']
 
@@ -23,4 +28,8 @@ def login(request):
             except:
                 return redirect(reverse('main:home'))
 
-    return render(request, 'main/forms/login.html', {'form': form})
+    else:
+        # Ajout des erreurs dans le formulaire.
+        context['errors'] = "Vos identifiants ne sont pas corrects"
+
+    return render(request, 'main/forms/login.html', context)

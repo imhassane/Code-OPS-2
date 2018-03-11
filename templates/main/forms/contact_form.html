@@ -1,0 +1,35 @@
+<form method="post">
+    {% csrf_token %}
+    <fieldset class="uk-fieldset">
+        <legend class="uk-legend">Contactez-moi</legend>
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                {{ form.title }}
+            </div>
+        </div>
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                {{ form.email }}
+            </div>
+        </div>
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: comment"></span>
+                {{ form.message }}
+            </div>
+        </div>
+
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <input type="submit" value="Envoyer le message" class="uk-button uk-button-secondary uk-width-large@m uk-width-small@s">
+            </div>
+        </div>
+
+    </fieldset>
+
+</form>

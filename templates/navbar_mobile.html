@@ -20,7 +20,11 @@
                 <li class="uk-nav-header">CodeOPS</li>
                 <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> A propos</a></li>
                 <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Portfolio</a></li>
-                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Contact</a></li>
+                <li>
+                    <a href="{% url 'main:contact' %}">
+                        <span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Contact
+                    </a>
+                </li>
                 <li class="uk-nav-divider"></li>
 
                 {% if not user.is_authenticated %}

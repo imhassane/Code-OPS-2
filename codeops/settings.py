@@ -117,3 +117,12 @@ MEDIA_URL = '/medias/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias')
 
 LOGIN_URL = '/login/'
+
+# Configuration pour l'envoi des mails.
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "codeopspro@gmail.com"
+EMAIL_HOST_PASSWORD = 'codeopspro1999@'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST
+SERVER_EMAIL = EMAIL_HOST
