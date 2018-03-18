@@ -32,10 +32,13 @@
             }
         </style>
 
-        <script src="{% static 'dist/js/turbolinks.js' %}"></script>
 
     </head>
-    <body class="">
+    {% if not home %}
+    <body class="" style="background-color:silver;">
+    {% else %}
+    <body style="background-color:background-color:#313740;">
+    {% endif %}
 
         <header>
             {% include 'header.html' %}

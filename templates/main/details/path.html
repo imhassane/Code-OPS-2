@@ -6,4 +6,45 @@
 
 {% block main %}
 
+<section class="uk-grid-medium uk-child-width-1-1@s uk-child-width-1-3@m uk-grid-match uk-flex-center" uk-grid>
+    {% for c in courses %}
+
+    <div>
+
+        <div class="uk-card uk-card-default uk-card-hover">
+
+            <div class="uk-card-header">
+                <h2 class="uk-card-title"> {{ c.title }} </h2>
+            </div>
+
+            <div class="uk-card-body">
+                <p>
+                    {{ c.description }}
+                </p>
+            </div>
+
+            <div class="uk-card-footer">
+                {% if not c in user_courses %}
+                <a href="{% url 'main:new_course' c.slug path.pk %}" class="uk-width-1-1 uk-button uk-button-secondary">Commencer ce cours</a>
+                {% else %}
+                <a href="{% url 'main:parts' c.slug %}" class="uk-width-1-1 uk-button uk-button-secondary">Continuer ce cours</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+    {% empty %}
+
+    <span class="uk-text-center uk-text-bold">
+        <p>
+            <span uk-icon="icon: warning"></span>
+            Aucun cours n'est disponible pour le moment
+        </p>
+    </span>
+
+    {% endfor %}
+
+</section>
+
 {% endblock %}

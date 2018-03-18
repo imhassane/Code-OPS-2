@@ -11,4 +11,4 @@ class Part(BaseCourseModel):
     content = TextField(default="Aucun contenu pour ce cours")
 
     def get_absolute_url(self):
-        return reverse('main:part', kwargs={'pk': self.pk, 'part_slug': self.slug})
+        return reverse('main:part', kwargs={'slug': self.slug})

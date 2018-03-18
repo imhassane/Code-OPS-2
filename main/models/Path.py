@@ -9,4 +9,4 @@ class Path(BaseCourseModel):
     career = ForeignKey('Career', related_name='paths', on_delete=CASCADE)
 
     def get_absolute_url(self):
-        return reverse('path', kwargs={'pk': self.pk, 'slug': self.slug})
+        return reverse('main:path', kwargs={'slug': self.slug})

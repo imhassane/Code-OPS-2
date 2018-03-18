@@ -7,9 +7,20 @@ app_name = "main"
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
+
+    # Pour les carrières.
     path('careers/', CareerList.as_view(), name='careers'),
+    path('career/<slug:slug>/', CareerDetail.as_view(), name='career'),
+
+    # Pour les parcours.
     path('paths/<int:career_pk>', PathList.as_view(), name='paths'),
+    path('path/<slug:slug>/', PathDetail.as_view(), name='path'),
+
+    # Pour les cours.
     path('courses/<int:path_pk>', CourseList.as_view(), name='courses'),
+    path('course/<slug:slug>/', CourseDetail.as_view(), name='course'),
+
+    # Pour les parties.
     path('parts/<slug:course_slug>', PartList.as_view(), name='parts'),
 
     path('part/<slug:part_slug>/<int:pk>/', PartDetail.as_view(), name='part'),
