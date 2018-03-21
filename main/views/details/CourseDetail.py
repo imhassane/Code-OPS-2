@@ -12,6 +12,9 @@ class CourseDetail(DetailView):
 
         context = super(CourseDetail, self).get_context_data(**kwargs)
 
-        context['parts'] = Part.object.filter(course=self.get_object())
+        # On recupere la liste des parties disponibles.
+        parts = Part.objects.filter(course=self.get_object())
+
+        context['parts'] = parts
 
         return context

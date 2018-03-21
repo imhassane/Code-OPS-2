@@ -1,44 +1,57 @@
-<nav class="uk-navbar-container uk-navbar-transparent uk-light uk-visible@m" uk-navbar>
+<nav class="uk-navbar-container uk-dark uk-visible@m uk-box-shadow-large" uk-navbar>
 
-            <div class="uk-navbar-left">
-                <ul class="uk-navbar-nav">
-                    <li><a href="" class="uk-button uk-button-text">A propos</a></li>
-                    <li><a href="" class="uk-button uk-button-text">Portfolio</a></li>
-                    <li><a href="{% url 'main:contact' %}" class="uk-button uk-button-text">Contact</a></li>
-                </ul>
-            </div>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li><a href="" class="uk-button uk-button-text">A propos</a></li>
+            <li><a href="" class="uk-button uk-button-text">Portfolio</a></li>
+            <li><a href="{% url 'main:contact' %}" class="uk-button uk-button-text">Contact</a></li>
+        </ul>
+    </div>
 
-            <div class="uk-navbar-center">
-                <ul class="uk-navbar-nav">
-                    <li><a href="{% url 'main:home' %}" class="uk-logo">CodeOPS!</a></li>
-                </ul>
-            </div>
+    <div class="uk-navbar-center">
+        <ul class="uk-navbar-nav">
+            <li><a href="{% url 'main:home' %}" class="uk-logo">CodeOPS!</a></li>
+        </ul>
+    </div>
 
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                    {% if user.is_authenticated %}
-                    <li>
-                        <a href="">{{ user.username }}</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li class="uk-active"><a href="#">Mon compte</a></li>
-                                <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
+    <div class="nav-overlay uk-navbar-right">
 
-                                <li class="uk-nav-header">Cours</li>
-                                <li><a href="{% url 'main:dashboard' %}">Tableau de bord</a></li>
-                                <li><a href="#">Voir les cours</a></li>
-                                <li class="uk-nav-divider"></li>
-                                <li><a href="#">Aller vers le blog</a></li>
-                            </ul>
-                        </div>
-                    </li>
+        <ul class="uk-navbar-nav">
+            <li><a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a></li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="">{{ user.username }}</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Mon compte</a></li>
+                        <li><a href="{% url 'main:logout' %}">Déconnexion</a></li>
 
-                    <li><a href="{%url 'main:dashboard' %}">Mes cours</a></li>
-                    {% else %}
-                    <li><a href="{% url 'main:login' %}" class="uk-button uk-button-text">Connexion</a></li>
-                    <li><a href="{% url 'main:register' %}" class="uk-button uk-button-text">Inscription</a></li>
-                    {% endif %}
-                </ul>
-            </div>
+                        <li class="uk-nav-header">Cours</li>
+                        <li><a href="{% url 'main:dashboard' %}">Tableau de bord</a></li>
+                        <li><a href="#">Voir les cours</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">Aller vers le blog</a></li>
+                    </ul>
+                </div>
+            </li>
 
-        </nav>
+            <li><a href="{%url 'main:dashboard' %}">Mes cours</a></li>
+            {% else %}
+            <li><a href="{% url 'main:login' %}" class="uk-button uk-button-text">Connexion</a></li>
+            <li><a href="{% url 'main:register' %}" class="uk-button uk-button-text">Inscription</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+</nav>
+<div class="nav-overlay uk-navbar-left uk-flex-1" style="margin-bottom:20px;" hidden>
+
+    <div class="uk-navbar-item uk-width-expand">
+        <form class="uk-search uk-search-navbar uk-width-1-1" action="{% url 'main:search' %}">
+            <input class="uk-search-input" type="search" placeholder="Entrez votre recherche..." name="search" autofocus>
+        </form>
+    </div>
+
+    <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+
+</div>

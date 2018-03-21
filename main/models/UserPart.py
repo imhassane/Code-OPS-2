@@ -1,12 +1,11 @@
 from django.db import models
 from .Part import Part
 from .UserCourse import UserCourse
-from django.contrib.auth.models import User
+from .UserModel import UserModel
 
 
-class UserPart(models.Model):
+class UserPart(UserModel):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     part = models.ForeignKey(Part, on_delete=models.CASCADE)
     validate = models.BooleanField(default=False)
 

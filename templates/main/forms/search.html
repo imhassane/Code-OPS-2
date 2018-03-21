@@ -1,15 +1,20 @@
 {% extends 'layout.html' %}
 
-{% block meta %} {% endblock %}
-
-{% block title %} Quelle carrière voulez-vous ? {% endblock %}
+{% block title %} Résultats de recherche {% endblock %}
 
 {% block main %}
 
-<section class="uk-grid-medium uk-child-width-1-1@s uk-child-width-1-3@m uk-grid-match uk-flex-center" uk-grid-parallax>
-    {% for c in Careers %}
+<section>
 
-    <div>
+    {% if results %}
+
+    <h1>Résultats de votre recherche pour: {{ query }}</h1>
+
+    {% if career_found %}
+    <div class="uk-grid-medium uk-child-width-1-1@s uk-child-width-1-3@m uk-grid-match uk-flex-center" uk-grid>
+
+        {% for c in careers %}
+
         <div class="uk-card uk-card-default uk-card-secondary uk-card-hover">
 
             <div class="uk-card-body uk-cover-container">
@@ -20,7 +25,7 @@
             <div class="uk-card-footer uk-child-width-1-1" uk-grid>
 
                 <div class="">
-                    <h2>{{ c.title }}</h2>
+                    <h2>{{ c.title }} - 1</h2>
                 </div>
 
                 <div>
@@ -45,17 +50,29 @@
 
         </div>
     </div>
-    {% empty %}
-
-    <span class="uk-text-center uk-text-bold">
-        <p>
-            <span uk-icon="icon: warning"></span>
-            Aucune carrière n'est disponible pour le moment
-        </p>
-
-    </span>
 
     {% endfor %}
+    </div>
+
+    {% endif %}
+
+    {% if path_found %}
+    {% for c in paths %}
+    <h2>{{ c.title }}</h2>
+    {% endfor %}
+    {% endif %}
+
+    {% if course_found %}
+
+    {% for c in courses %}
+    <h2>{{ c.title }}</h2>
+    {% endfor %}
+
+    {% endif %}
+
+    {% else %}
+    <p>Aucun résultat</p>
+    {% endif %}
 
 </section>
 

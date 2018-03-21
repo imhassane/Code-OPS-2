@@ -1,12 +1,11 @@
-from django.db import models
+from .UserModel import UserModel
 from .Path import Path
 from .UserCareer import UserCareer
-from django.contrib.auth.models import User
+from django.db import models
 
 
-class UserPath(models.Model):
+class UserPath(UserModel):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     path = models.ForeignKey(Path, on_delete=models.CASCADE)
 
     user_career = models.ForeignKey(UserCareer, on_delete=models.CASCADE, default=None)

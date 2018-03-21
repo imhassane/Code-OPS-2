@@ -1,11 +1,10 @@
 from django.db import models
 from .Career import Career
-from django.contrib.auth.models import User
+from .UserModel import UserModel
 
 
-class UserCareer(models.Model):
+class UserCareer(UserModel):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     career = models.ForeignKey(Career, on_delete=models.CASCADE)
 
     def __str__(self):

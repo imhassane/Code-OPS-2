@@ -1,10 +1,10 @@
 {% load static %}
 <!doctype html>
 <html>
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115495906-1"></script>
-        <script>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115495906-1"></script>
+    <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
@@ -12,51 +12,54 @@
             gtag('config', 'UA-115495906-1');
         </script>
 
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <!-- UIkit CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css" />
 
-        <link rel="stylesheet" href="{% static 'dist/css/custom.css' %}">
-        <link rel="icon" type="image/icon" href="{{ MEDIA_URL}}codeops.png">
-        <!-- Other meta that can be added for da different page -->
-        {% block meta %}{% endblock %}
-        <title>{% block title %} Welcome to CodeOPS {% endblock %} - CodeOPS!</title>
+    <link rel="stylesheet" href="{% static 'dist/css/custom.css' %}">
+    <link rel="icon" type="image/icon" href="{{ MEDIA_URL}}codeops.png">
+    <!-- Other meta that can be added for da different page -->
+    {% block meta %}{% endblock %}
+    <title>{% block title %} Welcome to CodeOPS {% endblock %} - CodeOPS!</title>
 
-        <style>
+    <style>
             .turbolinks-progress-bar{
             height:5px;
             }
         </style>
 
+    <script src="{% static 'dist/js/turbolinks.js' %}"></script>
 
-    </head>
-    {% if not home %}
-    <body class="" style="background-color:silver;">
-    {% else %}
-    <body style="background-color:background-color:#313740;">
-    {% endif %}
 
-        <header>
-            {% include 'header.html' %}
-        </header>
-        <div class="uk-container uk-container-expand" id="main-content">
+</head>
+{% if not home %}
+<body class="" style="">
+{% else %}
+<body style="background-color:#313740;">
+{% endif %}
 
-            <section id="content">
-                <canvas id="canvas"></canvas>
-                <main>{% block main %} {% endblock %}</main>
-            </section>
-        </div>
-        <footer>
-            {% include 'footer.html' %}
-        </footer>
+<header>
+    {% include 'header.html' %}
+</header>
+<div class="uk-container uk-container-expand" id="main-content">
 
-        <!-- UIkit JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
-        {% block additionnal_scripts %}{% endblock %}
-    </body>
+    <section id="content">
+        <canvas id="canvas"></canvas>
+        <main>{% block main %} {% endblock %}</main>
+    </section>
+
+</div>
+<footer>
+    {% include 'footer.html' %}
+</footer>
+
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+{% block additionnal_scripts %}{% endblock %}
+</body>
 </html>

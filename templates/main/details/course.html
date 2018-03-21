@@ -3,7 +3,23 @@
 {% block meta %} {% endblock %}
 
 {% block title %} {{ course.title }} {% endblock %}
-
+<>
 {% block main %}
+
+<section class="" uk-grid>
+
+    <div>
+
+        {% for part in parts %}
+
+            <div>
+                <h1>{{ part.title }}</h1>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
 
 {% endblock %}

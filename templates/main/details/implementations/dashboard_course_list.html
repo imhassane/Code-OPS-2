@@ -21,7 +21,7 @@
                     <span class="uk-text-bold">{{ c.course.description }}</span>
                 </div>
                 <div class="uk-card-footer">
-                    <a class="uk-button uk-button-secondary" href="{% url 'main:careers' %}">Voir ce cours</a>
+                    <a class="uk-button uk-button-secondary" href="{{ c.course.get_absolute_url }}">Voir ce cours</a>
                 </div>
             </div>
         </div>

@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 
 
 @login_required
-def career_redirect(request, username, career_pk):
+def career_redirect(request, career_pk):
 
-    user = _g(User, username=username)
+    user = _g(User, username=request.user.username)
     career = _g(Career, pk=career_pk)
 
     user_career = UserCareer(user=user, career=career)
