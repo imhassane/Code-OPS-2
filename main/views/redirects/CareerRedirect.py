@@ -13,4 +13,4 @@ def career_redirect(request, career_pk):
     user_career = UserCareer(user=user, career=career)
     user_career.save()
 
-    return redirect(reverse('main:paths', kwargs={'career_pk': career_pk}))
+    return redirect(reverse('main:career', kwargs={'slug': career.slug}))

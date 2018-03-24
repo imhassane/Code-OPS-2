@@ -2,19 +2,36 @@
 
 {% block main %}
 
-<div class="home">
-    <div>
-        <h1 class="uk-text-center welcome">
-            <p>Vous voulez vous lancer dans la programmaton ?</p>
-            <p>Apprenez à coder puis à créer avec CodeOPS</p>
+<div class="home uk-flex-center" uk-grid>
 
-        </h1>
-    </div>
+    <div class="uk-width-1-2@m uk-width-1-1@s">
 
-    <div class="uk-text-center btn">
-        <a href="{% url 'main:careers' %}" class="uk-text-center uk-button uk-button-secondary">Commencez maintenant!</a>
-    </div>
+        <div>
+            <h1 class="uk-text-center">Apprenez à coder puis à créer avec Nextration</h1>
+        </div>
+
+        <div class="uk-text-center btn">
+            <a href="{% url 'main:careers' %}" class="uk-text-center uk-button uk-button-secondary input">Commencez maintenant!</a>
+        </div>
     
+    </div>
+
+    <div class="uk-width-1-3@m">
+
+        <ul class="uk-child-width-expand" uk-tab>
+            <li><a href="#">Connexion</a></li>
+            <li><a href="#">Inscription</a></li>
+        </ul>
+
+        <ul class="uk-switcher uk-margin">
+
+            <li>{% include 'home_form/login.html' %}</li>
+            <li>{% include 'home_form/register.html' %}</li>
+
+        </ul>
+
+    </div>
+
 </div>
 
 {% endblock %}

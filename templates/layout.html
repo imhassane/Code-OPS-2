@@ -24,26 +24,22 @@
     <link rel="icon" type="image/icon" href="{{ MEDIA_URL}}codeops.png">
     <!-- Other meta that can be added for da different page -->
     {% block meta %}{% endblock %}
-    <title>{% block title %} Welcome to CodeOPS {% endblock %} - CodeOPS!</title>
+    <title>{% block title %} Bienvenue sur Nextration {% endblock %} - Nextration!</title>
 
     <style>
             .turbolinks-progress-bar{
             height:5px;
             }
-        </style>
+       </style>
 
     <script src="{% static 'dist/js/turbolinks.js' %}"></script>
 
 
 </head>
-{% if not home %}
-<body class="" style="">
-{% else %}
-<body style="background-color:#313740;">
-{% endif %}
+<body>
 
 <header>
-    {% include 'header.html' %}
+    {% include 'implementations/header.html' %}
 </header>
 <div class="uk-container uk-container-expand" id="main-content">
 
@@ -54,7 +50,7 @@
 
 </div>
 <footer>
-    {% include 'footer.html' %}
+    {% include 'implementations/footer.html' %}
 </footer>
 
 <!-- UIkit JS -->

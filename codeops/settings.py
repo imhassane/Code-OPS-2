@@ -10,9 +10,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'p2oe2rva#kahm&u=67o&il88(so46#t%%q+*76fv3)msw^^t8i'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost']
+
+DATE_INPUT_FORMATS = ['%d %M %Y à %Hh']
 
 
 # Application definition
@@ -25,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +54,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect'
             ],
         },
     },
@@ -88,6 +93,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
+    'social_core.backends.google.GoogleOpenId',  # for Google authentication
+    'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+    'social_core.backends.github.GithubOAuth2',  # for Github authentication
+    'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -117,6 +131,7 @@ MEDIA_URL = '/medias/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias')
 
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 # Configuration pour l'envoi des mails.
 EMAIL_USE_TLS = True
@@ -126,3 +141,9 @@ EMAIL_HOST_PASSWORD = 'codeopspro1999@'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST
 SERVER_EMAIL = EMAIL_HOST
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '503216186361-8ngpmhe8h4f3gh2vfdosbufpk20hpqdg.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '39A8kEFqeBz5nNGf5mk0CuPq'
+
+SOCIAL_AUTH_GITHUB_KEY = "90d1b8fa959b1e995ba7"
+SOCIAL_AUTH_GITHUB_SECRET = "efa4484722b702d26136716e7c1aa2811e38fb7f"

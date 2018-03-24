@@ -15,6 +15,7 @@ class CourseDetail(DetailView):
         # On recupere la liste des parties disponibles.
         parts = Part.objects.filter(course=self.get_object())
 
+        context['parts_title'] = [part.title for part in parts]
         context['parts'] = parts
 
         return context

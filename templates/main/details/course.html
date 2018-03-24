@@ -8,15 +8,46 @@
 
 <section class="" uk-grid>
 
-    <div>
+    <div class="" uk-grid>
 
-        {% for part in parts %}
+        <div class="uk-width-1-4">
+            <img src="{{ course.avatar.url }}" alt="{{ course.title }}" class="uk-logo">
+        </div>
 
-            <div>
-                <h1>{{ part.title }}</h1>
-            </div>
+        <div class="uk-width-3-4">
+            <h1 class="uk-text-bold">{{ course.title }}</h1>
+            <p class="uk-text-meta">Mise à jour le {{ course.update_date|date:"D j F Y à H"|title }} heures</p>
+        </div>
 
-        {% endfor %}
+    </div>
+
+    <div class="uk-margin-medium-top uk-width-1-1">
+
+        <ul class="uk-flex-center" uk-tab>
+            {% for title in parts_title %}
+
+                <li><a href="#">{{ title }}</a></li>
+
+            {% endfor %}
+        </ul>
+
+         <ul class="uk-switcher">
+            {% for part in parts %}
+                <li>
+                    <div class="uk-flex-center" uk-grid>
+
+                        <div class="uk-width-1-1">
+                            <p class="uk-text-lead uk-text-center">{{ part.description }}</p>
+                        </div>
+
+                        <div class="uk-width-1-2@m uk-width-1-1@s">
+                            <p>{{ part.content|safe|linebreaks }}</p>
+                        </div>
+
+                    </div>
+                </li>
+            {% endfor %}
+         </ul>
 
     </div>
 

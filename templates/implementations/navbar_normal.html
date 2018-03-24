@@ -10,7 +10,13 @@
 
     <div class="uk-navbar-center">
         <ul class="uk-navbar-nav">
-            <li><a href="{% url 'main:home' %}" class="uk-logo">CodeOPS!</a></li>
+            <li>
+                {% if not user.is_authenticated %}
+                <a href="{% url 'main:home' %}" class="uk-logo">Nextration!</a>
+                {% else %}
+                <a href="{% url 'main:dashboard' %}" class="uk-logo">Nextration!</a>
+                {% endif %}
+            </li>
         </ul>
     </div>
 
@@ -35,7 +41,16 @@
                 </div>
             </li>
 
-            <li><a href="{%url 'main:dashboard' %}">Mes cours</a></li>
+            <li>
+                <a href="#">Catalogue</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="{% url 'main:careers' %}">Carrières</a></li>
+                        <li><a href="#">Parcours</a></li>
+                        <li><a href="#">Cours</a></li>
+                    </ul>
+                </div>
+            </li>
             {% else %}
             <li><a href="{% url 'main:login' %}" class="uk-button uk-button-text">Connexion</a></li>
             <li><a href="{% url 'main:register' %}" class="uk-button uk-button-text">Inscription</a></li>
