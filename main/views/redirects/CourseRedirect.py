@@ -1,18 +1,14 @@
 from django.contrib.auth.decorators import login_required
-from ...models import Course, UserCourse, UserPath, Path
+from ...models import Course, UserCourse
 from django.shortcuts import get_object_or_404 as _g, redirect, reverse
-from django.core.exceptions import ObjectDoesNotExist
 
 
 @login_required
-def course_redirect(request, course_slug, path_pk):
+def course_redirect(request, slug):
 
-    user = request.user
-    path = _g(Path, pk=path_pk)
-    user_path = _g(UserPath, path=path, user=request.user)
-    course = _g(Course, slug=course_slug)
+    course = _g(Course, slug=slug)
 
-    user_course = UserCourse(user=user, course=course, user_path=user_path)
+    user_course = UserCourse(user=request.user, course=course)
     user_course.save()
 
-    return redirect(reverse('main:course', kwargs={'course_slug': course_slug}))
+    return redirect(reverse('main:course', kwargs={'slug': slug}))

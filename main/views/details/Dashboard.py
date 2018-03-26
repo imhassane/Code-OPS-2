@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404 as _g
 from django.contrib.auth.decorators import login_required
-from ...models import UserPath, UserCourse, UserPart, UserCareer, Profil
+from ...models import UserCourse, Profil
 from ...models import Profil
 
 
@@ -20,8 +20,8 @@ def dashboard(request):
     else:
 
         courses = UserCourse.objects.filter(user=request.user)
-        paths = UserPath.objects.filter(user=request.user)
-        careers = UserCareer.objects.filter(user=request.user)
+        paths = set([user_course.course.path for user_course in courses])
+        careers = set([path.career for path in paths])
 
         context['profil'] = profil
 

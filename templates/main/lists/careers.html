@@ -30,16 +30,7 @@
                 </div>
 
                 <div class="">
-                    {% if c in user_careers %}
-                    <a href="{{ c.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Continuer ce parcours!</a>
-                    {% else %}
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'main:new_career' c.pk %}" class="uk-width-1-1 uk-button uk-button-secondary">Commencer ce parcours!</a>
-                    {% else %}
-                    <a href="{{ c.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Voir ce parcours</a>
-                    {% endif %}
-
-                    {% endif %}
+                    <a href="{{ c.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Voir cette carrière</a>
                 </div>
             </div>
 

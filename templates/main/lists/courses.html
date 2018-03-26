@@ -30,17 +30,9 @@
                 </div>
 
                 <div class="">
-                    {% if c in user_courses %}
-                    <a href="{{ c.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Continuer ce cours!</a>
-                    {% else %}
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'main:new_course' c.slug path.pk %}" class="uk-width-1-1 uk-button uk-button-secondary">Commencer ce cours!</a>
-                    {% else %}
                     <a href="{{ c.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Voir ce cours</a>
-                    {% endif %}
-
-                    {% endif %}
                 </div>
+
             </div>
 
         </div>

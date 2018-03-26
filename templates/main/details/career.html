@@ -30,17 +30,9 @@
                 </div>
 
                 <div class="">
-                    {% if p in user_paths %}
-                    <a href="{{ p.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Continuer ce parcours!</a>
-                    {% else %}
-                        {% if user.is_authenticated %}
-                        <a href="{% url 'main:new_path' p.slug career.pk %}" class="uk-width-1-1 uk-button uk-button-secondary">Commencer ce parcours!</a>
-                        {% else %}
-                         <a href="{{ p.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Voir ce parcours</a>
-                        {% endif %}
-
-                    {% endif %}
+                    <a href="{{ p.get_absolute_url }}" class="uk-width-1-1 uk-button uk-button-secondary">Voir ce parcours</a>
                 </div>
+
             </div>
 
         </div>

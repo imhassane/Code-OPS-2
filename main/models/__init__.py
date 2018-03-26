@@ -6,9 +6,6 @@ from .Part import Part
 # Partie utilisateur.
 from .Profil import Profil
 from .UserCourse import UserCourse
-from .UserPath import UserPath
-from .UserCareer import UserCareer
-from .UserPart import UserPart
 
 # Page de contact.
 from .About import About

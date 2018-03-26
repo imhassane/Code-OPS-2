@@ -1,4 +1,4 @@
-<a class="uk-accordion-title" href="#">Parcours</a>
+<a class="uk-accordion-title" href="#" class="">Parcours</a>
 
 <div class="uk-accordion-content">
 
@@ -8,20 +8,20 @@
             <div class="uk-card uk-card-default uk-card-hover">
                 <div class="uk-card-header">
                     <div class="uk-width-1-1">
-                        <h4>{{ p.path.title }}</h4>
+                        <h4>{{ p.title }}</h4>
                     </div>
                     <div class="uk-width-1-1">
                         <p class="uk-text-bold">
                             <span uk-icon="icon: calendar"></span>
-                            {{ p.path.added_date }}
+                            {{ p.added_date }}
                         </p>
                     </div>
                 </div>
                 <div class="uk-card-body">
-                    <span class="uk-text-bold">{{ p.path.description }}</span>
+                    <span class="uk-text-bold">{{ p.description }}</span>
                 </div>
                 <div class="uk-card-footer">
-                    <a class="uk-button uk-button-secondary" href="{% url 'main:dashboard' %}">Voir ce parcours</a>
+                    <a class="uk-button uk-button-secondary" href="{% url 'main:path' p.slug %}">Voir ce parcours</a>
                 </div>
             </div>
         </div>

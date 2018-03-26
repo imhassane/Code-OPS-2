@@ -46,14 +46,28 @@
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="{% url 'main:careers' %}">Carrières</a></li>
-                        <li><a href="#">Parcours</a></li>
-                        <li><a href="#">Cours</a></li>
+                        <li><a href="{% url 'main:paths' %}">Parcours</a></li>
+                        <li><a href="{% url 'main:courses' %}">Cours</a></li>
                     </ul>
                 </div>
             </li>
             {% else %}
-            <li><a href="{% url 'main:login' %}" class="uk-button uk-button-text">Connexion</a></li>
-            <li><a href="{% url 'main:register' %}" class="uk-button uk-button-text">Inscription</a></li>
+            {% if not home %}
+            <li>
+                <a href="{% url 'main:login' %}" class="uk-button uk-button-text" uk-toggle="target: #modal-login">
+                    Authentification</a>
+            </li>
+            <div id="modal-login" uk-modal>
+                <div class="uk-modal-dialog uk-modal-title uk-padding">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <h2 class="uk-modal-title">Authentification</h2>
+                    <small class="">
+                        Une nouvelle facon de voir vos réseaux sociaux
+                    </small>
+                    {% include 'home_form/login.html' %}
+                </div>
+            </div>
+            {% endif %}
             {% endif %}
         </ul>
     </div>
