@@ -1,13 +1,18 @@
 <div>
 
-    <ul uk-accordion>
+    <ul uk-tab>
+        <li><a href="">Carrières</a></li>
+        <li><a href="">Parcours</a></li>
+        <li><a href="">Cours</a></li>
+    </ul>
+    <ul class="uk-switcher">
         <li>
             {% include 'main/details/implementations/dashboard_career_list.html' %}
         </li>
         <li>
             {% include 'main/details/implementations/dashboard_path_list.html' %}
         </li>
-        <li class="uk-open">
+        <li>
             {% include 'main/details/implementations/dashboard_course_list.html' %}
         </li>
     </ul>

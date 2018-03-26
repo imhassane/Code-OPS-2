@@ -34,7 +34,7 @@
 
                         <li class="uk-nav-header">Cours</li>
                         <li><a href="{% url 'main:dashboard' %}">Tableau de bord</a></li>
-                        <li><a href="#">Voir les cours</a></li>
+                        <li><a href="{% url 'main:courses' %}">Voir les cours</a></li>
                         <li class="uk-nav-divider"></li>
                         <li><a href="#">Aller vers le blog</a></li>
                     </ul>
@@ -46,7 +46,9 @@
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="{% url 'main:careers' %}">Carrières</a></li>
+                        <li class="uk-nav-divider"></li>
                         <li><a href="{% url 'main:paths' %}">Parcours</a></li>
+                        <li class="uk-nav-divider"></li>
                         <li><a href="{% url 'main:courses' %}">Cours</a></li>
                     </ul>
                 </div>
