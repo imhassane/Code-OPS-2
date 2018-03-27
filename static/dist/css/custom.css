@@ -1,1 +1,49 @@
-#main-content{min-height:100vh;}.welcome{color:#fff;font-size:x-large}.my-form{position:absolute;top:10%;height:80%;width:90%}.uk-input{border:1px solid gray}.home-btn{color:#fff;border:1px solid silver}.btn{margin-top:3%}.uk-accordion-title{color:#fff}
+@-webkit-keyframes HomeAnimation{
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-3px);
+    }
+
+    75% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+@keyframes HomeAnimation{
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-3px);
+    }
+
+    75% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#main-content{
+    min-height: 100vh;
+}
+
+.uk-input{
+    border: 1px solid gray;
+}
+
+
+
+#home-picture{
+    -webkit-animation: HomeAnimation 2s infinite;
+    animation: HomeAnimation 2s infinite;
+}

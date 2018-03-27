@@ -41,18 +41,7 @@
                 </div>
             </li>
 
-            <li>
-                <a href="#">Catalogue</a>
-                <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="{% url 'main:careers' %}">Carrières</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="{% url 'main:paths' %}">Parcours</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="{% url 'main:courses' %}">Cours</a></li>
-                    </ul>
-                </div>
-            </li>
+
             {% else %}
             {% if not home %}
             <li>
@@ -71,6 +60,18 @@
             </div>
             {% endif %}
             {% endif %}
+            <li>
+                <a href="#">Catalogue</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="{% url 'main:careers' %}">Carrières</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="{% url 'main:paths' %}">Parcours</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="{% url 'main:courses' %}">Cours</a></li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </div>
 

@@ -8,6 +8,7 @@ class CareerDetail(DetailView):
     context_object_name = 'career'
     template_name = 'main/details/career.html'
 
+
     def get_context_data(self, **kwargs):
         context = super(CareerDetail, self).get_context_data(**kwargs)
 

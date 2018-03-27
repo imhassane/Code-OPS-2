@@ -1,3 +1,46 @@
+@-webkit-keyframes HomeAnimation{
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-30px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+@keyframes HomeAnimation{
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-30px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 #main-content{
     min-height: 100vh;
     background-color: #313740;
@@ -29,4 +72,9 @@
 }
 .uk-accordion-title{
     color: white;
+}
+
+#home-picture{
+    -webkit-animation: HomeAnimation 2s;
+    animation: HomeAnimation 2s;
 }

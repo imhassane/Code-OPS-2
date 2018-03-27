@@ -12,9 +12,26 @@
     <div>
         <div class="uk-card uk-card-secondary uk-card-hover">
 
-            <div class="uk-card-body uk-cover-container">
+            <div class="uk-card-body uk-cover-container uk-light">
                 <canvas height="130"></canvas>
                 <img src="{{ c.avatar.url }}" alt="{{ c.title }}" uk-cover />
+                {% if user.is_authenticated %}
+                <div class="">
+                    <a href="#" class="uk-position-absolute uk-transform-center" style="left: 95%; top: 90%;" uk-marker></a>
+                    <div uk-drop="pos:right-center">
+                        <div class="uk-card uk-card-default uk-padding">
+                            <div class="uk-card-header">
+                                <h2 class="uk-text-lead">Sources</h2>
+                            </div>
+                            <div class="uk-card-body">
+                                <p>
+                                    <a href="#" class="uk-text-primary">https://www.google.fr</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
             </div>
 
             <div class="uk-card-footer uk-child-width-1-1" uk-grid>
