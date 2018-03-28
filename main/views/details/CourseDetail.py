@@ -12,8 +12,13 @@ class CourseDetail(DetailView):
 
         context = super(CourseDetail, self).get_context_data(**kwargs)
 
+        course = self.get_object()
+
+        course.views += 1
+        course.save(commit=True)
+
         # On recupere la liste des parties disponibles.
-        parts = Part.objects.filter(course=self.get_object())
+        parts = Part.objects.filter(course=course)
 
         context['parts_title'] = [part.title for part in parts]
         context['parts'] = parts

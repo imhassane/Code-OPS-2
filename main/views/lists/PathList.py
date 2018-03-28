@@ -7,3 +7,4 @@ class PathList(ListView):
     model = Path
     context_object_name = 'paths'
     template_name = 'main/lists/paths.html'
+    queryset = Path.objects.filter(visible=True)

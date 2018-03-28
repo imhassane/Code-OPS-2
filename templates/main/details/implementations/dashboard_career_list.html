@@ -1,13 +1,13 @@
 <div>
 
-    <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
+    <div class="uk-child-width-1-3@m uk-child-width-1-1@s uk-grid-match" uk-grid>
         {% for c in careers %}
         <div>
             <div class="uk-card uk-card-secondary uk-card-hover">
 
                 <div class="uk-card-body uk-cover-container">
                     <canvas height="130"></canvas>
-                    <img src="{{ c.avatar.url }}" alt="{{ c.title }}" uk-cover />
+                    <img src="{{ c.avatar.url }}" alt="{{ c.title }}" uk-cover/>
                 </div>
 
                 <div class="uk-card-footer uk-child-width-1-1" uk-grid>

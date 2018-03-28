@@ -10,6 +10,7 @@ class SuperModel(models.Model):
 
     views = models.PositiveIntegerField(default=0)
     likes = models.PositiveIntegerField(default=0)
+    source = models.TextField(default="Aucune source n'est définie")
     
     added_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)

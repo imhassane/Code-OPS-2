@@ -1,5 +1,3 @@
-from .login import login
-from .register import register
+from .search import search
 from .logout import logout
 from .contact import contact
-from .search import search

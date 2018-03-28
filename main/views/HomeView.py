@@ -1,13 +1,10 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render, reverse, redirect
 
 
-class HomeView(TemplateView):
+def home(request):
 
-    template_name = 'main/home.html'
+    # Si l'utilisateur est connecté, on le redirige vers le tableau de bord.
+    if request.user.is_authenticated:
+        return redirect(reverse('main:dashboard'))
 
-    def get_context_data(self, **kwargs):
-        context = super(HomeView, self).get_context_data(**kwargs)
-
-        context['home'] = True
-
-        return context
+    return render(request, 'main/home.html', {home: True})

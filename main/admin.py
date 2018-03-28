@@ -18,7 +18,7 @@ class CareerAdmin(admin.ModelAdmin):
         }),
         ('Other informations', {
             'classes': ['collapse', ],
-            'fields': ['avatar', 'description', 'visible']
+            'fields': ['avatar', 'source', 'description', 'visible']
         })
     ]
 
@@ -42,7 +42,7 @@ class PathAdmin(admin.ModelAdmin):
         }),
         ('Other informations', {
             'classes': ['collapse', ],
-            'fields': ['avatar', 'description', 'visible']
+            'fields': ['avatar', 'source', 'description', 'visible']
         })
     ]
 
@@ -66,7 +66,7 @@ class CourseAdmin(admin.ModelAdmin):
         }),
         ('Other informations', {
             'classes': ['collapse', ],
-            'fields': ['avatar', 'description', 'visible']
+            'fields': ['avatar', 'source', 'description', 'visible']
         })
     ]
 
