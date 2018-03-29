@@ -15,7 +15,7 @@ class CourseDetail(DetailView):
         course = self.get_object()
 
         course.views += 1
-        course.save(commit=True)
+        course.save()
 
         # On recupere la liste des parties disponibles.
         parts = Part.objects.filter(course=course)

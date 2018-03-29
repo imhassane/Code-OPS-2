@@ -15,6 +15,18 @@
             <div class="uk-card-body uk-cover-container">
                 <canvas height="130"></canvas>
                 <img src="{{ p.avatar.url }}" alt="{{ p.title }}" uk-cover>
+                <div class="">
+                    <a href="#modal-center" class="uk-position-absolute uk-transform-center" style="left: 95%; top: 90%;" uk-marker uk-toggle></a>
+                    <div id="modal-center" class="uk-flex-top" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <h2>Sources</h2>
+                            <p>
+                                {{ p.source }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="uk-card-footer uk-child-width-1-1" uk-grid>
